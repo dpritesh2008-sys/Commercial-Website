@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Place Order | ProKick Sports</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <nav class="navbar container">
+        <div class="brand-group">
+          <a href="index.html" class="brand">ProKick Sports</a>
+        </div>
+        <div class="nav-links">
+          <a href="index.html#products">Products</a>
+          <a href="index.html#about">About</a>
+          <a href="index.html#categories">Categories</a>
+          <a href="index.html#contact">Contact</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="order-section container">
+        <div class="order-card">
+          <p class="eyebrow">Order Summary</p>
+          <h2 id="orderTitle">Your selected product</h2>
+          <p id="orderDescription">Confirm your order details here before checkout.</p>
+          <div class="order-info">
+            <div>
+              <strong>Product</strong>
+              <p id="orderProduct">-</p>
+            </div>
+            <div>
+              <strong>Price</strong>
+              <p id="orderPrice">-</p>
+            </div>
+          </div>
+
+          <form class="order-form" id="orderForm">
+            <input type="hidden" name="product" id="orderProductInput" />
+            <input type="hidden" name="price" id="orderPriceInput" />
+            <div class="form-section">
+              <h3>Contact Information</h3>
+              <label>
+                Full Name
+                <input type="text" name="name" required placeholder="Your name" autocomplete="name" />
+              </label>
+              <label>
+                Email Address
+                <input type="email" name="email" required placeholder="you@example.com" autocomplete="email" />
+              </label>
+              <label>
+                Phone Number
+                <input type="tel" name="phone" required placeholder="8825743549" autocomplete="tel" />
+              </label>
+            </div>
+            <div class="form-section">
+              <h3>Shipping Details</h3>
+              <label>
+                Street Address
+                <input type="text" name="street" required placeholder="123 Main Street" autocomplete="shipping street-address" />
+              </label>
+              <label>
+                City, State, Zip
+                <input type="text" name="cityStateZip" required placeholder="City, State ZIP" autocomplete="shipping address-level2" />
+              </label>
+              <label>
+                Country
+                <input type="text" name="country" required placeholder="Country" autocomplete="shipping country-name" />
+              </label>
+            </div>
+            <div class="form-section">
+              <h3>Payment Information</h3>
+              <label>
+                Card Number
+                <input type="text" name="cardNumber" required placeholder="1234 5678 9012 3456" autocomplete="cc-number" pattern="[0-9\s]{13,19}" />
+              </label>
+              <label>
+                Expiration Date
+                <input type="text" name="expiry" required placeholder="MM / YY" autocomplete="cc-exp" pattern="(0[1-9]|1[0-2])\s*/\s*[0-9]{2}" />
+              </label>
+              <label>
+                CVV / Security Code
+                <input type="text" name="cvv" required placeholder="123" autocomplete="cc-csc" pattern="[0-9]{3,4}" />
+              </label>
+              <label>
+                Billing Address
+                <textarea name="billingAddress" placeholder="Billing address (if different)" autocomplete="billing street-address"></textarea>
+              </label>
+            </div>
+            <button type="submit" class="btn btn-primary">Confirm Order</button>
+          </form>
+
+          <div class="order-success" id="orderSuccess">
+            <h3>Order request submitted</h3>
+            <p>
+              Thank you for placing your order. We have received your details and will contact you shortly to complete the purchase.
+            </p>
+            <a href="index.html" class="btn btn-secondary">Return to Shop</a>
+          </div>
+
+          <p class="order-note">
+            After confirming, you will receive a confirmation message with next steps.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-content">
+        <div>
+          <h3>ProKick Sports</h3>
+        </div>
+        <p class="footer-note">© <span id="year"></span> ProKick Sports. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="order.js"></script>
+  </body>
+</html>
